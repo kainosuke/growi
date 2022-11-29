@@ -16,15 +16,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-
-    volumes:
-      - ..:/workspace/growi:delegated
-      - node_modules:/workspace/growi/node_modules
-      - node_modules_app:/workspace/growi/packages/app/node_modules
-      - node_modules_slackbot-proxy:/workspace/growi/packages/slackbot-proxy/node_modules
-      - buildcache_app:/workspace/growi/packages/app/.next
-      - ../../growi-docker-compose:/workspace/growi-docker-compose:delegated
-
     tty: true
 
   mongo:
@@ -46,7 +37,7 @@ services:
   #   cloned from https://github.com/weseek/growi-docker-compose.git
   elasticsearch:
     build:
-      context: ../../growi-docker-compose/elasticsearch
+      context: ../growi-docker-compose/elasticsearch
       dockerfile: ./Dockerfile
       args:
         - version=7.16.1
@@ -64,7 +55,7 @@ services:
         hard: -1
     volumes:
       - /usr/share/elasticsearch/data
-      - ../../growi-docker-compose/elasticsearch/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+      - ../growi-docker-compose/elasticsearch/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
 
   #need to adjust kibana version based on elasticsearch version (use same version as elasticsearch version)
   kibana:
@@ -93,8 +84,3 @@ services:
       - 3010:3000
     volumes:
       - /files/sqlite
-volumes:
-  node_modules:
-  node_modules_app:
-  node_modules_slackbot-proxy:
-  buildcache_app:
