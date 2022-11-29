@@ -16,6 +16,7 @@
 
 # GROWI
 
+[![Open Your vscode](https://img.shields.io/static/v1?label=vscode&message=Clone&color=blue&logo=visualstudiocode)](vscode://vscode.git/clone?url=https://github.com/kainosuke/growi)
 [![Actions Status](https://github.com/weseek/growi/workflows/Node%20CI/badge.svg)](https://github.com/weseek/growi/actions)
 [![docker pulls](https://img.shields.io/docker/pulls/weseek/growi.svg)](https://hub.docker.com/r/weseek/growi/)
 
