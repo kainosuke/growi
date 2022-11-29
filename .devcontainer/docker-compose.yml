@@ -33,17 +33,6 @@ services:
     restart: unless-stopped
     tty: true
 
-  #need to adjust kibana version based on elasticsearch version (use same version as elasticsearch version)
-  kibana:
-    image: docker.elastic.co/kibana/kibana:7.16.1
-    restart: unless-stopped
-    environment:
-      ELASTICSEARCH_HOSTS: 'http://elasticsearch:9200'
-    ports:
-      - 5601:5601
-    depends_on:
-      - elasticsearch
-
   # This container requires '../../growi-docker-compose' repository
   #   cloned from https://github.com/weseek/growi-docker-compose.git
   hackmd:
